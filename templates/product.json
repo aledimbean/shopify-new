@@ -37,6 +37,9 @@
         },
         "share": {
           "type": "share"
+        },
+        "show_cart_items": {
+          "type": "show_cart_items"
         }
       },
       "block_order": [
@@ -48,7 +51,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "show_cart_items"
       ]
     },
     "product-recommendations": {

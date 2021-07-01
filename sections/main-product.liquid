@@ -297,6 +297,15 @@
             </pickup-availability>
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+           {%- when 'show_cart_items' -%}
+              <h3>{{block.settings.cart_items_title}}</h3>
+              {%- if cart != empty -%}
+                {%- for item in cart.items -%}
+                {%- if item.title == product.title -%}
+                    <span>Hooray!🎉 Yor already have this product in your cart.</span>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
           {%- endcase -%}
         {%- endfor -%}
       </div>
@@ -704,6 +713,18 @@
           "id": "page",
           "type": "page",
           "label": "t:sections.main-product.blocks.popup.settings.page.label"
+        }
+      ]
+    },
+    {
+      "type" : "show_cart_items",
+      "name" : "t:sections.main-product.blocks.show_cart_items.name",
+      "settings": [
+        {
+          "type" : "text",
+          "id": "show_cart_title",
+          "default": "Product in cart?",
+          "label" : "t:sections.main-product.blocks.show_cart_items.settings.show_cart_title_label"
         }
       ]
     }
