@@ -301,7 +301,7 @@
               <h3>{{block.settings.cart_items_title}}</h3>
               {%- if cart != empty -%}
                 {%- for item in cart.items -%}
-                {%- if item.title == product.title -%}
+                {%- if item.title contains product.title -%}
                     <span>Hooray!🎉 Yor already have this product in your cart.</span>
                   {%- endif -%}
                 {%- endfor -%}
@@ -722,7 +722,7 @@
       "settings": [
         {
           "type" : "text",
-          "id": "cart_title",
+          "id": "cart_items_title",
           "default": "Product in cart?",
           "label" : "sections.main-product.blocks.cart_items.settings.show_cart_title.label"
         }
