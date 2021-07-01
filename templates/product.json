@@ -50,7 +50,9 @@
           }
         },
         "share": {
-          "type": "share"
+          "type": "share",
+          "settings": {
+          }
         },
         "show_cart_items": {
           "type": "show_cart_items",
