@@ -297,7 +297,7 @@
             </pickup-availability>
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
-           {%- when 'show_cart_items' -%}
+           {%- when 'cart_items' -%}
               <h3>{{block.settings.cart_items_title}}</h3>
               {%- if cart != empty -%}
                 {%- for item in cart.items -%}
@@ -717,14 +717,14 @@
       ]
     },
     {
-      "type" : "show_cart_items",
-      "name" : "sections.main-product.blocks.show_cart_items.name",
+      "type" : "cart_items",
+      "name" : "sections.main-product.blocks.cart_items.name",
       "settings": [
         {
           "type" : "text",
-          "id": "show_cart_title",
+          "id": "cart_title",
           "default": "Product in cart?",
-          "label" : "sections.main-product.blocks.show_cart_items.settings.show_cart_title.label"
+          "label" : "sections.main-product.blocks.cart_items.settings.show_cart_title.label"
         }
       ]
     }
