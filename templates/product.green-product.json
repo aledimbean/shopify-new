@@ -63,10 +63,10 @@
             "icon": "check_mark"
           }
         },
-        "6edf7a65-0d81-44ca-8c70-116d803f3721": {
-          "type": "show_cart_items",
+        "f2020ba0-1fd7-44ef-bd43-e0de03468dda": {
+          "type": "cart_items",
           "settings": {
-            "show_cart_title": "Product in cart?"
+            "cart_title": "Product in cart?"
           }
         }
       },
@@ -81,7 +81,7 @@
         "description",
         "share",
         "1026afd5-1263-4ed9-a88c-5eddbfa377e9",
-        "6edf7a65-0d81-44ca-8c70-116d803f3721"
+        "f2020ba0-1fd7-44ef-bd43-e0de03468dda"
       ],
       "settings": {
         "enable_sticky_info": true,

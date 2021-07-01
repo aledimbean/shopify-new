@@ -54,11 +54,6 @@
           "settings": {
           }
         },
-        "show_cart_items": {
-          "type": "show_cart_items",
-          "settings": {
-          }
-        },
         "1026afd5-1263-4ed9-a88c-5eddbfa377e9": {
           "type": "collapsible_tab",
           "settings": {
@@ -66,6 +61,12 @@
             "content": "<p>{{ product.metafields.descriptors.care_guide.value }}<\/p><p><\/p>",
             "page": "",
             "icon": "check_mark"
+          }
+        },
+        "c8a10f8f-cde5-490e-8d1a-52e245d09e98": {
+          "type": "cart_items",
+          "settings": {
+            "cart_title": "Product in cart?"
           }
         }
       },
@@ -79,8 +80,8 @@
         "buy_buttons",
         "description",
         "share",
-        "cart_items",
-        "1026afd5-1263-4ed9-a88c-5eddbfa377e9"
+        "1026afd5-1263-4ed9-a88c-5eddbfa377e9",
+        "c8a10f8f-cde5-490e-8d1a-52e245d09e98"
       ],
       "settings": {
         "enable_sticky_info": true,
