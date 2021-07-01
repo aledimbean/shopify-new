@@ -62,6 +62,12 @@
             "page": "",
             "icon": "check_mark"
           }
+        },
+        "6edf7a65-0d81-44ca-8c70-116d803f3721": {
+          "type": "show_cart_items",
+          "settings": {
+            "show_cart_title": "Product in cart?"
+          }
         }
       },
       "block_order": [
@@ -74,7 +80,8 @@
         "buy_buttons",
         "description",
         "share",
-        "1026afd5-1263-4ed9-a88c-5eddbfa377e9"
+        "1026afd5-1263-4ed9-a88c-5eddbfa377e9",
+        "6edf7a65-0d81-44ca-8c70-116d803f3721"
       ],
       "settings": {
         "enable_sticky_info": true,
