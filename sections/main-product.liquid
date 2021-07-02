@@ -298,11 +298,21 @@
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
            {%- when 'cart_items' -%}
-              <h3>{{block.settings.cart_items_title}}</h3>
               {%- if cart != empty -%}
+              <h3>{{block.settings.cart_items_title}}</h3>
                 {%- for item in cart.items -%}
                 {%- if item.title contains product.title -%}
-                    <span>Hooray!🎉 Yor already have this product in your cart.</span>
+                    <span>Hooray!🎉 Yor already have this product in your cart. </span>
+                    <span>Check out these other goodies..</span>
+                    {%- for product in collections.all.products -%}
+                      {%- if item.title contains product.title -%}
+                      {%- continue -%}
+                      {%- endif -%}
+                      <div>
+                          <a href="{{product.url}}">{{product.title}}</a>
+                          <span>{% if product.price_varies %}From  {% endif %} <span> {{product.price_min}} </span>RON</span>
+                      </div>
+                      {%- endfor -%}
                   {%- endif -%}
                 {%- endfor -%}
               {%- endif -%}
