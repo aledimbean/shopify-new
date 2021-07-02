@@ -304,15 +304,18 @@
                 {%- if item.title contains product.title -%}
                     <span>Hooray!🎉 Yor already have this product in your cart. </span>
                     <span>Check out these other goodies..</span>
+                    <ul class="grid grid--2-col grid--2-col-tablet grid--2-col-desktop">
                     {%- for product in collections.all.products -%}
                       {%- if item.title contains product.title -%}
                       {%- continue -%}
                       {%- endif -%}
-                      <div>
-                          <a href="{{product.url}}">{{product.title}}</a>
-                          <span>{% if product.price_varies %}From  {% endif %} <span> {{product.price_min}} </span>RON</span>
-                      </div>
+                        <li class="grid__item">
+                          <a href="{{ product.url }}">{{product.title | capitalize }}</a>
+                          <span>{% if product.price_varies %}From  {% endif %} <span>{{ product.price_min | money_with_currency }}</span>
+                          <a class="product-form__submit button button--full-width button--secondary" href="{{ product.url }}">View product</a>
+                        </li>
                       {%- endfor -%}
+                    </ul>
                   {%- endif -%}
                 {%- endfor -%}
               {%- endif -%}
@@ -734,7 +737,7 @@
           "type" : "text",
           "id": "cart_items_title",
           "default": "Product in cart?",
-          "label" : "sections.main-product.blocks.cart_items.settings.show_cart_title.label"
+          "label" : "sections.main-product.blocks.cart_items.settings.show_cart_title"
         }
       ]
     }
