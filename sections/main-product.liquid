@@ -199,7 +199,7 @@
                     {{ product.variants | json }}
                   </script>
                 </variant-radios>
-              {%- elseif block.settings.picker_type == 'custom' -%}
+              {%- elsif block.settings.picker_type == 'custom' -%}
               <super-variants class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
                 {%- for option in product.options_with_values -%}
                   <div class="product-form__input product-form__input--dropdown">
