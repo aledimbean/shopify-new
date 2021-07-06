@@ -200,29 +200,23 @@
                   </script>
                 </variant-radios>
               {%- elsif block.settings.picker_type == 'custom' -%}
-              <super-variants class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
-                {%- for option in product.options_with_values -%}
-                  <div class="product-form__input product-form__input--dropdown">
-                    <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                      {{ option.name }}
-                    </label>
-                    <div class="select">
-                      <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                        class="select__select"
-                        name="options[{{ option.name | escape }}]"
-                        form="product-form-{{ section.id }}"
-                      >
-                        {%- for value in option.values -%}
-                          <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
-                            {{ value }}
-                          </option>
-                        {%- endfor -%}
-                      </select>
-                      {% render 'icon-caret' %}
-                    </div>
-                  </div>
+                  <super-variants class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
+                    {%- for option in product.options_with_values -%}
+                    <fieldset class="js product-form__input">
+                      <legend class="form__label">{{ option.name }}</legend>
+                      {%- for value in option.values -%}
+                        <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                              name="{{ option.name }}"
+                              value="{{ value | escape }}"
+                              form="product-form-{{ section.id }}"
+                              {% if option.selected_value == value %}checked{% endif %}
+                        >
+                        <label for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                          {{ value }}
+                        </label>
+                      {%- endfor -%}
+                    </fieldset>
                 {%- endfor -%}
-
                 <script type="application/json">
                   {{ product.variants | json }}
                 </script>
@@ -338,7 +332,7 @@
                       {%- continue -%}
                       {%- endif -%}
                         <li class="grid__item">
-                          <div class="media media--transparent media--{{ media_size }} media--hover-effect"
+                          <div class="media media--transparent media--hover-effect"
                           style="padding-bottom:100%;"
                         >
                           <img srcset="{%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
@@ -356,7 +350,7 @@
                           height="{{ product.featured_media.height }}"
                         >
                         </div>
-                          <a href="{{ product.url }}">{{product.title | capitalize }}</a>
+                          <a href="{{ product.url }}">{{ product.title | capitalize }}</a>
                           <span>{% if product.price_varies %}From  {% endif %} <span>{{ product.price_min | money_with_currency }}</span>
                           <a class="product-form__submit button button--full-width button--secondary" href="{{ product.url }}">View product</a>
                         </li>
