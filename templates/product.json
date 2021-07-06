@@ -30,7 +30,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "custom"
           }
         },
         "quantity_selector": {
@@ -66,7 +66,7 @@
         "c8a10f8f-cde5-490e-8d1a-52e245d09e98": {
           "type": "cart_items",
           "settings": {
-            "cart_title": "Product in cart?"
+            "cart_items_title": "Product in cart?"
           }
         }
       },
