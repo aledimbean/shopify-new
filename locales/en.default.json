@@ -383,6 +383,13 @@
         "shipping_method_not_available_generic": {
           "one": "There are no shipping rates available for this order\/address."
         }
+      },
+      "marketing": {
+        "sms": {
+          "disclaimer": {
+            "description_html": "By submitting this form, you agree to receive marketing text messages from us at the number provided, including messages sent by autodialer. Consent is not a condition of purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel. View our <a href=\""
+          }
+        }
       }
     }
   }
