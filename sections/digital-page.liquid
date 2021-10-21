@@ -4,7 +4,7 @@
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="page-width page-width--narrow">
+<div class="page-width ">
   <h1 class="main-page-title page-title h0">
     {{ page.title | escape }}
     <h2>test</h2>
@@ -39,7 +39,7 @@
           {% if item.digital_asset_file != blank %}
           <div class="cf-widget-field cf-widget-field__dowload_asset cf-widget-field--field_collection_json">
             {% for file in item.digital_asset_file %}
-            <a href="{{ file.digital_asset_file }}" class="btn buttton" download>DOWNLOAD</a>
+            <a href="{{ file.digital_asset_file }}" class="btn buttton" download="file.svg">DOWNLOAD</a>
             {% endfor %}
           </div>
           {% endif %}
