@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "digital": {
+      "type": "digital-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "digital"
+  ]
+}
