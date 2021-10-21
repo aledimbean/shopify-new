@@ -39,7 +39,7 @@
           {% if item.digital_asset_file != blank %}
           <div class="cf-widget-field cf-widget-field__dowload_asset cf-widget-field--field_collection_json">
             {% for file in item.digital_asset_file %}
-              {{ file.value }}
+              {{ file }}
             {% endfor %}
           </div>
           {% endif %}
