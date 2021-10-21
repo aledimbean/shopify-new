@@ -1,0 +1,15 @@
+{% if page.metafields.custom_fields["upload_asset"] != blank %}
+  <div class="custom-field custom-field__upload-asset custom-field__type--file-repeater">
+    <h3 class="custom-field--title">Upload asset</h3>
+    <div class="custom-field--value">
+      {% for item in page.metafields.custom_fields["upload_asset"] %}
+        <div class="fc-repeater-field-item fc-repeater-field-item--{{ forloop.index0 }} field__upload-asset field-type--file">
+           <h4 class="custom-field--title">Upload asset</h4>
+           <div class="custom-field--value">
+             {{ item["upload_asset"] }}
+           </div>
+        </div>
+       {% endfor %}
+    </div>
+  </div>
+{% endif %}
