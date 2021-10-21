@@ -10,20 +10,43 @@
     <h2>test</h2>
   </h1>
   <div class="rte">
-    {% if page.metafields.custom_fields["upload_asset"] != blank %}
-  <div class="custom-field custom-field__upload-asset custom-field__type--file-repeater">
-    <h3 class="custom-field--title">Upload asset</h3>
-    <div class="custom-field--value">
-      {% for item in page.metafields.custom_fields["upload_asset"] %}
-        <div class="fc-repeater-field-item fc-repeater-field-item--{{ forloop.index0 }} field__upload-asset field-type--file">
-           <h4 class="custom-field--title">Download</h4>
-           <div class="custom-field--value">
-             {{ item["upload_asset"] }}
-           </div>
-        </div>
-       {% endfor %}
+{% if page.metafields.custom_fields["digital_assets"] != blank %}
+{% assign data_attr = shop.metafields._cf_pages["digital_assets"].data_attr %}
+<div class="cf-widget-digital-assets cf-widget__columns" {{ data_attr }}>
+  <div class="cf-widget-items-wrapper">
+    {% for item in page.metafields.custom_fields["digital_assets"] %}
+    <div class="cf-widget-item">
+      <div class="inner">
+        
+          {% if item.image != blank %}
+          <div class="cf-widget-field cf-widget-field__image cf-widget-field--image">
+            {% render "cf-image" with image: item.image, crop: "center", size: "380x380" %}
+          </div>
+          {% endif %}
+        
+          {% if item.title != blank %}
+          <div class="cf-widget-field cf-widget-field__title cf-widget-field--text">
+            {{ item.title }}
+          </div>
+          {% endif %}
+        
+          {% if item.body != blank %}
+          <div class="cf-widget-field cf-widget-field__body cf-widget-field--html">
+            {{ item.body }}
+          </div>
+          {% endif %}
+        
+          {% if item.dowload_asset != blank %}
+          <div class="cf-widget-field cf-widget-field__dowload_asset cf-widget-field--field_collection_json">
+            {{ item.dowload_asset }}
+          </div>
+          {% endif %}
+        
+      </div>
     </div>
+    {% endfor %}
   </div>
+</div>
 {% endif %}
   </div>
 </div>
