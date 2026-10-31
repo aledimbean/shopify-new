@@ -1,4 +1,4 @@
-{% render "blocks.custom_fields" with resource_type: "pages", blocks: section.blocks %}
+{% render "blocks.custom_fields" with resource_type, resource_type: "pages", blocks: section.blocks %}
 {% schema %}
   {
     "name": {
@@ -46,3 +46,15 @@
     ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render "blocks.custom_fields" with resource_type: "pages", blocks: section.blocks
+    %}'
+  to: '{% render "blocks.custom_fields" with resource_type, resource_type: "pages",
+    blocks: section.blocks %}'
+  position: 0..102
+{% endcomment %}

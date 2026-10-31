@@ -8,7 +8,7 @@
         
           {% if item.image != blank %}
           <div class="cf-widget-field cf-widget-field__image cf-widget-field--image">
-            {% render "cf-image" with image: item.image, crop: "center", size: "380x380" %}
+            {% render "cf-image" with image, image: item.image, crop: "center", size: "380x380" %}
           </div>
           {% endif %}
         
@@ -36,3 +36,15 @@
   </div>
 </div>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render "cf-image" with image: item.image, crop: "center", size: "380x380"
+    %}'
+  to: '{% render "cf-image" with image, image: item.image, crop: "center", size: "380x380"
+    %}'
+  position: 534..620
+{% endcomment %}

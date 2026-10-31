@@ -20,7 +20,7 @@
         
           {% if item.image != blank %}
           <div class="cf-widget-field cf-widget-field__image cf-widget-field--image">
-            {% render "cf-image" with image: item.image, crop: "center", size: "380x380" %}
+            {% render "cf-image" with image, image: item.image, crop: "center", size: "380x380" %}
           </div>
           {% endif %}
         
@@ -58,4 +58,15 @@
   "tag": "section",
   "class": "spaced-section"
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render "cf-image" with image: item.image, crop: "center", size: "380x380"
+    %}'
+  to: '{% render "cf-image" with image, image: item.image, crop: "center", size: "380x380"
+    %}'
+  position: 1160..1246
+{%- endcomment -%}
